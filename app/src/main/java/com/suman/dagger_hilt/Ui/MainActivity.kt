@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setUi()
+        setBi()
 
         postViewModel.getPost()
         postViewModel.postLiveData.observe(this, Observer {response->
@@ -40,5 +41,8 @@ class MainActivity : AppCompatActivity() {
             layoutManager=LinearLayoutManager(this@MainActivity)
             adapter=postAdapter
         }
+    }
+    private fun setBi(){
+
     }
 }
