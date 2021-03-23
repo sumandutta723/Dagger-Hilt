@@ -26,23 +26,31 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setUi()
         setBi()
-
+        setSum()
         postViewModel.getPost()
-        postViewModel.postLiveData.observe(this, Observer {response->
-         postAdapter.setData(response as ArrayList<Post>)
+
+        postViewModel.postLiveData.observe(this, Observer { response ->
+            postAdapter.setData(response as ArrayList<Post>)
         })
     }
 
     private fun setUi() {
-        recyclerView=findViewById(R.id.recyclerView)
-        postAdapter= PostAdapter(this, ArrayList())
+        recyclerView = findViewById(R.id.recyclerView)
+
+        postAdapter = PostAdapter(this, ArrayList())
+
         recyclerView.apply {
             setHasFixedSize(true)
-            layoutManager=LinearLayoutManager(this@MainActivity)
-            adapter=postAdapter
+            layoutManager = LinearLayoutManager(this@MainActivity)
+            adapter = postAdapter
         }
     }
-    private fun setBi(){
+
+    private fun setBi() {
 
     }
+    private fun setSum() {
+
+    }
+
 }
