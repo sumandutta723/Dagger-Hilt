@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setUi()
+
         postViewModel.getPost()
         postViewModel.postLiveData.observe(this, Observer {response->
          postAdapter.setData(response as ArrayList<Post>)
