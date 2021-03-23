@@ -16,6 +16,7 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
+
     private lateinit var postAdapter: PostAdapter
 
     private val postViewModel: PostViewModel by viewModels()
