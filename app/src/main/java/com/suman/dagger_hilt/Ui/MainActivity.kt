@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.suman.dagger_hilt.Adapter.PostAdapter
 import com.suman.dagger_hilt.Model.Post
 import com.codingwithjks.dagger_hilt.R
+import com.facebook.stetho.Stetho
 import com.suman.dagger_hilt.ViewModel.PostViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -23,6 +24,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        Stetho.initializeWithDefaults(this)
+
         setContentView(R.layout.activity_main)
         setUi()
         setBi()

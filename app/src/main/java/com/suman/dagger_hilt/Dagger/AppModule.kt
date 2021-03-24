@@ -1,5 +1,6 @@
 package com.suman.dagger_hilt.Dagger
 
+import com.facebook.stetho.okhttp3.StethoInterceptor
 import com.suman.dagger_hilt.Network.ApiService
 import com.suman.dagger_hilt.Utils.Constants
 import dagger.Module
@@ -18,6 +19,11 @@ import javax.inject.Singleton
 class AppModule {
     @Provides
     @Singleton
+    fun providesOkhttpClient():OkHttpClient=OkHttpClient.Builder()
+        .addNetworkInterceptor(StethoInterceptor())
+        .build()
+     @Provides
+     @Singleton
     fun providesRetrofit():Retrofit = Retrofit.Builder()
             .baseUrl(Constants.BaseUrl)
             .addConverterFactory(GsonConverterFactory.create())
